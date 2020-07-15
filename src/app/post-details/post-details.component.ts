@@ -8,7 +8,6 @@ import { DetailsService } from './../details.service';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-  showModal : boolean;
   PostId: any;
   back : any;
   id : number;
@@ -34,17 +33,7 @@ export class PostDetailsComponent implements OnInit {
     alert(`Post with ID = ${this.posts_details.id} Deleted`)
     this.router.navigate(['']);
   }
-  editPost(posts_details) {
-    this.showModal = true;
-    console.log(posts_details.body);
-    this.posts_details.edittitle = posts_details.title
-    // this._DetailsService.editPost(this.posts_details.id).subscribe();
-    // alert(`Post with ID = ${this.posts_details.id} Deleted`)
-    // this.router.navigate(['']);
-  }
-  closepopup(){
-    this.showModal = false;
-  }
+  
   goPrevious() {
     let previousId = parseInt(this.route.snapshot.paramMap.get('id')); 
     let previousIds = previousId -1 
